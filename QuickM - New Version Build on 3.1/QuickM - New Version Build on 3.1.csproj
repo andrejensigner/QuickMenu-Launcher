@@ -9,9 +9,11 @@
     <Company>Ensigner UI</Company>
     <Product>Game Launcher</Product>
     <Copyright>Andrej Ensigner © 2021</Copyright>
-    <Version>1.0.3</Version>
+    <Version>1.0.5</Version>
     <Authors>Andrej Ensigner</Authors>
     <ApplicationIcon>fivem.ico</ApplicationIcon>
+    <AssemblyVersion>1.0.5</AssemblyVersion>
+    <FileVersion>1.0.5</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

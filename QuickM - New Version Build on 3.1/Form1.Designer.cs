@@ -39,7 +39,8 @@ namespace QuickM___New_Version_Build_on_3._1
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.facebook = new System.Windows.Forms.Button();
-            this.instagram = new System.Windows.Forms.Button();
+            this.github = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@ namespace QuickM___New_Version_Build_on_3._1
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("TitlingGothicFB Cond Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(775, 0);
             this.button1.Name = "button1";
@@ -98,7 +99,8 @@ namespace QuickM___New_Version_Build_on_3._1
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 19);
             this.label1.TabIndex = 4;
-            this.label1.Text = "QuickMenu Launcher v1.0.4";
+            this.label1.Text = "QuickMenu Launcher v1.0.5";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // checkBox1
             // 
@@ -122,7 +124,7 @@ namespace QuickM___New_Version_Build_on_3._1
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 30);
             this.label2.TabIndex = 6;
-            this.label2.Text = "            QuickMenu release 11521 \r\nMade by Andrej Ensigner © 2021 ";
+            this.label2.Text = "            QuickMenu release 12511 \r\nMade by Andrej Ensigner © 2021 ";
             // 
             // button2
             // 
@@ -131,7 +133,7 @@ namespace QuickM___New_Version_Build_on_3._1
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("TitlingGothicFB Cond Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.Location = new System.Drawing.Point(750, 0);
             this.button2.Name = "button2";
@@ -168,28 +170,44 @@ namespace QuickM___New_Version_Build_on_3._1
             this.facebook.UseVisualStyleBackColor = false;
             this.facebook.Click += new System.EventHandler(this.facebook_Click);
             // 
-            // instagram
+            // github
             // 
-            this.instagram.BackColor = System.Drawing.Color.Transparent;
-            this.instagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.instagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.instagram.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.instagram.ForeColor = System.Drawing.SystemColors.Control;
-            this.instagram.Location = new System.Drawing.Point(48, 405);
-            this.instagram.Name = "instagram";
-            this.instagram.Size = new System.Drawing.Size(30, 30);
-            this.instagram.TabIndex = 10;
-            this.instagram.Text = "IG";
-            this.instagram.UseVisualStyleBackColor = false;
+            this.github.BackColor = System.Drawing.Color.Transparent;
+            this.github.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.github.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.github.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.github.ForeColor = System.Drawing.SystemColors.Control;
+            this.github.Location = new System.Drawing.Point(48, 405);
+            this.github.Name = "github";
+            this.github.Size = new System.Drawing.Size(36, 30);
+            this.github.TabIndex = 10;
+            this.github.Text = "GIT";
+            this.github.UseVisualStyleBackColor = false;
+            this.github.Click += new System.EventHandler(this.instagram_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("SF UI Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(90, 405);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 30);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "UPDATE";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuickM___New_Version_Build_on_3._1.Properties.Resources.wallhaven_yjr2z7;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.instagram);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.github);
             this.Controls.Add(this.facebook);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
@@ -203,6 +221,7 @@ namespace QuickM___New_Version_Build_on_3._1
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
@@ -223,7 +242,8 @@ namespace QuickM___New_Version_Build_on_3._1
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button facebook;
-        private System.Windows.Forms.Button instagram;
+        private System.Windows.Forms.Button github;
+        private System.Windows.Forms.Button button3;
     }
 }
 
