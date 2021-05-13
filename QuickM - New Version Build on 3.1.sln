@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickM - New Version Build on 3.1", "QuickM - New Version Build on 3.1\QuickM - New Version Build on 3.1.csproj", "{5A435CED-52A2-44BE-9AC0-35A1EC3E1EDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickMenu Launcher for FiveM", "QuickM - New Version Build on 3.1\QuickMenu Launcher for FiveM.csproj", "{5A435CED-52A2-44BE-9AC0-35A1EC3E1EDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

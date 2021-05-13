@@ -66,9 +66,9 @@ namespace QuickM___New_Version_Build_on_3._1
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::QuickM___New_Version_Build_on_3._1.Properties.Resources.quickmenu_logologo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(205, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(205, 82);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(414, 145);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -97,9 +97,9 @@ namespace QuickM___New_Version_Build_on_3._1
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(2, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 19);
+            this.label1.Size = new System.Drawing.Size(253, 38);
             this.label1.TabIndex = 4;
-            this.label1.Text = "QuickMenu Launcher v1.0.5";
+            this.label1.Text = "QuickMenu Launcher v1.0.5beta\r\n\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // checkBox1
@@ -124,7 +124,7 @@ namespace QuickM___New_Version_Build_on_3._1
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 30);
             this.label2.TabIndex = 6;
-            this.label2.Text = "            QuickMenu release 12511 \r\nMade by Andrej Ensigner © 2021 ";
+            this.label2.Text = "            QuickMenu release 13511 \r\nMade by Andrej Ensigner © 2021 ";
             // 
             // button2
             // 
@@ -212,11 +212,11 @@ namespace QuickM___New_Version_Build_on_3._1
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.start_button);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

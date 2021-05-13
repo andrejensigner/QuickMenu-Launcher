@@ -14,6 +14,7 @@ using System.Reflection;
 using System.IO;
 using System.Threading;
 using System.Security.Permissions;
+using AutoUpdaterDotNET;
 
 
 namespace QuickM___New_Version_Build_on_3._1
@@ -50,7 +51,7 @@ namespace QuickM___New_Version_Build_on_3._1
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine("Waiting for FiveM started!"); // Console Oznámenie
-                Thread.Sleep(10000); // <= Časovanie / potom spustí zostávajuce scripty (10000 = 20sekund)
+                Thread.Sleep(7200); // <= Časovanie / potom spustí zostávajuce scripty (1200 = 5sekund)
             }
 
             Process prs = Process.GetCurrentProcess(); 
@@ -83,7 +84,7 @@ namespace QuickM___New_Version_Build_on_3._1
                 proc3.PriorityClass = ProcessPriorityClass.AboveNormal;
         }
 
-        // --> UPDATER ---------------------------------------------------------------------------*****-----------------------***---------------------------------------------------
+        /* --> UPDATER ---------------------------------------------------------------------------*****-----------------------***---------------------------------------------------
 
         
         string newVersion = "";
@@ -91,12 +92,24 @@ namespace QuickM___New_Version_Build_on_3._1
         {
             
             //URL ADRESA UPDATE SÚBORU
-            string url = "https://drive.google.com/u/0/uc?export=download&confirm=tSav&id=1RX3ux7u3lz1_UTJYsneumEr6vfD1n7e0";
+            string url = "ftp://136.243.202.211:69/QuickM%20-%20New%20Version%20Build%20on%203.1.exe";
 
             //Stiahni hlavný súbor
             WebClient wc = new WebClient();
             wc.DownloadFileCompleted += new AsyncCompletedEventHandler(wc_DownloadFileCompleted);
             wc.DownloadFileAsync(new Uri(url), Application.StartupPath + "/QuickM - New Version Build on 3.1(1).exe");
+            DownloadDLL();
+        }
+
+        public void DownloadDLL()
+        {
+            //URL ADRESA DLL SUBORU
+            string url = "ftp://136.243.202.211:69/QuickM%20-%20New%20Version%20Build%20on%203.1.dll";
+
+            //Stiahni hlavný súbor
+            WebClient wc = new WebClient();
+            wc.DownloadFileCompleted += new AsyncCompletedEventHandler(wc_DownloadFileCompleted);
+            wc.DownloadFileAsync(new Uri(url), Application.StartupPath + "/QuickM - New Version Build on 3.1(1).dll");
         }
 
         void wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -111,7 +124,7 @@ namespace QuickM___New_Version_Build_on_3._1
         {
             //Verzie 
             WebClient wc = new WebClient();
-            string textFile = wc.DownloadString("https://drive.google.com/u/0/uc?id=1FgglD7hxLzECzuCgD9BfHzmu3vLvBfzj&export=download"); //<= TXT verzie PASTEBIN: https://pastebin.com/raw/rtjVyYPm
+            string textFile = wc.DownloadString("https://www.dropbox.com/s/ts6f66w2w2iiqpl/version.txt?dl=1"); //<= TXT verzie PASTEBIN: https://pastebin.com/raw/rtjVyYPm
             newVersion = textFile;
             label1.Text = label1.Text + Application.ProductVersion;
             label2.Text = label2.Text + newVersion;
@@ -119,7 +132,7 @@ namespace QuickM___New_Version_Build_on_3._1
             //Ak existuje nová verzia, vyvolá metódu DownloadUpdate 
             if (newVersion != Application.ProductVersion)
             {
-                MessageBox.Show("An update is available! Click OK to download and restart! ", "QuickMenu Updater", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Update started! Click OK to download and restart! ", "QuickMenu Updater", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DownloadUpdate();
             }
         }
@@ -132,16 +145,23 @@ namespace QuickM___New_Version_Build_on_3._1
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Týmto sa pôvodný súbor premenuje, takže každá skratka funguje a po aktualizácii sa príslušne pomenuje 
+            // --------------------------------- EXE SUBOR -----------------------
             if (System.IO.File.Exists(Application.StartupPath + "/QuickM - New Version Build on 3.1(1).exe"))
             {
-                System.IO.File.Move(Application.StartupPath + "/QuickM - New Version Build on 3.1.exe", Application.StartupPath + "/QuickM - New Version Build on 3.1(2).exe");
+                System.IO.File.Move(Application.StartupPath + "/QuickM - New Version Build on 3.1.exe", Application.StartupPath + "/QuickM - New Version Build on 3.1(12511).exe"); // <= Vždy zmenit build
                 System.IO.File.Move(Application.StartupPath + "/QuickM - New Version Build on 3.1(1).exe", Application.StartupPath + "/QuickM - New Version Build on 3.1.exe");
-                System.IO.File.Delete(Application.StartupPath + "/QuickM - New Version Build on 3.1(2).exe");
+                // System.IO.File.Delete(Application.StartupPath + "/QuickM - New Version Build on 3.1(2).exe");
+                // File.Delete(Application.StartupPath + "/QuickM - New Version Build on 3.1(2).exe");
+            }
+           
+            // ---------------------------------- DLL SUBOR ---------------------------------------
+            if (System.IO.File.Exists(Application.StartupPath + "/QuickM - New Version Build on 3.1(1).dll"))
+            {
+                System.IO.File.Move(Application.StartupPath + "/QuickM - New Version Build on 3.1.dll", Application.StartupPath + "/QuickM - New Version Build on 3.1(12511).dll"); // <= Vždy zmenit build
+                System.IO.File.Move(Application.StartupPath + "/QuickM - New Version Build on 3.1(1).dll", Application.StartupPath + "/QuickM - New Version Build on 3.1.dll");
             }
         }
-
-
+        */
         // --> CLOSE BTN ---------------------------------------------------
         private void button1_Click_1(object sender, EventArgs e)
                 {
@@ -218,8 +238,26 @@ namespace QuickM___New_Version_Build_on_3._1
         {
             GetUpdate();
         }
+        public void GetUpdate()
+        {
+            AutoUpdater.Start("ftp://136.243.202.211:69/update.xml");
+            MessageBox.Show("Checking for updates...", "QuickMenu Updater", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Waiting for FiveM update!"); // Console Oznámenie
+                Thread.Sleep(630); // <= Časovanie / potom spustí zostávajuce scripty (1200 = 5sekund) 240 = 1
+            }
+            MessageBox.Show("Your application is now updated!", "QuickMenu Updater", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
-        
+
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             
